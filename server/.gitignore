@@ -1,0 +1,45 @@
+# Environment variables
+.env
+
+# Compiled Object files, Static and Dynamic libs
+*.o
+*.a
+*.so
+
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.dylib
+*.test
+*.out
+/vendor/
+/go.work
+
+# Binary folder
+/bin/
+/build/
+
+# Log files
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Go workspace file
+go.work
+
+# Test binary, built with go test -c
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories (remove the comment below if you're using gomod or govendor)
+# vendor/
