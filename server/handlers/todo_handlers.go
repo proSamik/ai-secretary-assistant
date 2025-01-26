@@ -38,6 +38,9 @@ func CreateTodo(w http.ResponseWriter, r *http.Request) {
 
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(todo)
+    
+    // Broadcast the new todo to all connected clients
+    BroadcastTodoUpdate(todo, "todo_created")
 }
 
 func ListTodos(w http.ResponseWriter, r *http.Request) {
@@ -101,6 +104,9 @@ func UpdateTodo(w http.ResponseWriter, r *http.Request) {
 
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(todo)
+    
+    // Broadcast the updated todo to all connected clients
+    BroadcastTodoUpdate(todo, "todo_updated")
 }
 
 func DeleteTodo(w http.ResponseWriter, r *http.Request) {
@@ -119,4 +125,7 @@ func DeleteTodo(w http.ResponseWriter, r *http.Request) {
     }
 
     w.WriteHeader(http.StatusNoContent)
+    
+    // Broadcast the deleted todo ID to all connected clients
+    BroadcastTodoUpdate(id, "todo_deleted")
 }

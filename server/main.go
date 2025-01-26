@@ -58,6 +58,9 @@ func main() {
     r.HandleFunc("/api/todos/{id}", handlers.UpdateTodo).Methods("PUT", "OPTIONS")
     r.HandleFunc("/api/todos/{id}", handlers.DeleteTodo).Methods("DELETE", "OPTIONS")
 
+    // WebSocket route
+    r.HandleFunc("/ws", handlers.HandleWebSocket)
+
     // Start server
     port := os.Getenv("PORT")
     if port == "" {
