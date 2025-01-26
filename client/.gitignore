@@ -3,6 +3,7 @@
 /.pnp
 .pnp.js
 
+
 # Testing
 /coverage
 
@@ -25,3 +26,5 @@ yarn-error.log*
 # IDE
 .idea/
 .vscode/
+.next/
+node_modules/
